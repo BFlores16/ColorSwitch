@@ -54,14 +54,46 @@
 		A5AFF590258979CC0046BECB /* ColorSwitch */ = {
 			isa = PBXGroup;
 			children = (
-				A5AFF591258979CC0046BECB /* AppDelegate.swift */,
-				A5AFF597258979CC0046BECB /* GameScene.swift */,
-				A5AFF599258979CC0046BECB /* GameViewController.swift */,
-				A5AFF59B258979CC0046BECB /* Main.storyboard */,
-				A5AFF59E258979CF0046BECB /* Assets.xcassets */,
 				A5AFF5A0258979CF0046BECB /* Info.plist */,
+				A5AFF5AC25897C280046BECB /* Assets */,
+				A5AFF5AB25897C1D0046BECB /* Template */,
+				A5AFF5AA25897C100046BECB /* Scenes */,
+				A5AFF5A925897C020046BECB /* Controller */,
 			);
 			path = ColorSwitch;
+			sourceTree = "<group>";
+		};
+		A5AFF5A925897C020046BECB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5AFF599258979CC0046BECB /* GameViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5AFF5AA25897C100046BECB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A5AFF597258979CC0046BECB /* GameScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A5AFF5AB25897C1D0046BECB /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				A5AFF591258979CC0046BECB /* AppDelegate.swift */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		A5AFF5AC25897C280046BECB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A5AFF59E258979CF0046BECB /* Assets.xcassets */,
+				A5AFF59B258979CC0046BECB /* Main.storyboard */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
