@@ -28,6 +28,9 @@ class GameScene: SKScene {
     var switchState = SwitchState.red
     var currentColorIndex: Int?
     
+    let scoreLabel = SKLabelNode(text: "0")
+    var score: Int = 0
+    
     override func didMove(to view: SKView) {
         layoutScene()
         setupPhysics()
@@ -53,15 +56,28 @@ class GameScene: SKScene {
         colorCircle = SKSpriteNode(imageNamed: "ColorCircle")
         colorCircle.size = CGSize(width: frame.size.width / 3.0, height: frame.size.width / 3.0)
         colorCircle.position = CGPoint(x: frame.midX, y: frame.minY + colorCircle.size.height)
+        colorCircle.zPosition = ZPositions.colorCircle
         
         // Add physics body properties for color circle
         colorCircle.physicsBody = SKPhysicsBody(circleOfRadius: colorCircle.size.width / 2.0)
         colorCircle.physicsBody?.categoryBitMask =  PhysicsCategories.switchCategory
         colorCircle.physicsBody?.isDynamic = false
-        
         addChild(colorCircle)
         
+        // Add score label and configure UI
+        scoreLabel.fontName = "AvenirNext-Bold"
+        scoreLabel.fontSize = 60.0
+        scoreLabel.fontColor = UIColor.white
+        scoreLabel.position = CGPoint(x: frame.midX, y: frame.midY)
+        scoreLabel.zPosition = ZPositions.label
+        addChild(scoreLabel)
+        
         spawnBall()
+    }
+    
+    func updateScoreLabel() {
+        score += 1
+        scoreLabel.text = "\(score)"
     }
     
     /*
@@ -86,6 +102,7 @@ class GameScene: SKScene {
         // Send contact bit to SKPhysicsContactDelegate
         ball.physicsBody?.contactTestBitMask = PhysicsCategories.switchCategory
         ball.physicsBody?.collisionBitMask = PhysicsCategories.none
+        ball.zPosition = ZPositions.ball
         
         addChild(ball)
     }
@@ -133,7 +150,7 @@ extension GameScene: SKPhysicsContactDelegate {
         if contactMask == PhysicsCategories.ballCategory | PhysicsCategories.switchCategory {
             if let ball = contact.bodyA.node?.name == "Ball" ? contact.bodyA.node as? SKSpriteNode : contact.bodyB.node as? SKSpriteNode {
                 if currentColorIndex == switchState.rawValue {
-                    print("Correct!")
+                    updateScoreLabel()
                     ball.run(SKAction.fadeOut(withDuration: 0.25)) {
                         ball.removeFromParent()
                         self.spawnBall()
