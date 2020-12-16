@@ -32,6 +32,7 @@ class GameScene: SKScene {
     var score: Int = 0
     
     override func didMove(to view: SKView) {
+        run(SKAction.playSoundFileNamed("colorSwitchStart", waitForCompletion: false))
         layoutScene()
         setupPhysics()
     }
@@ -40,7 +41,7 @@ class GameScene: SKScene {
      Set the physics of the ball, slowing it down
      */
     func setupPhysics() {
-        physicsWorld.gravity = CGVector(dx: 0.0, dy: -2.0)
+        physicsWorld.gravity = CGVector(dx: 0.0, dy: -3.0)
         physicsWorld.contactDelegate = self
     }
     
@@ -51,6 +52,7 @@ class GameScene: SKScene {
      */
     func layoutScene() {
         backgroundColor = UIColor(red: 44/255, green: 66/255, blue: 80/255, alpha: 1.0)
+        
         
         // Add position and size properties for color circle
         colorCircle = SKSpriteNode(imageNamed: "ColorCircle")
@@ -112,6 +114,8 @@ class GameScene: SKScene {
      Turn the color circle to a different color
      */
     func turnColorCircle() {
+        run(SKAction.playSoundFileNamed("turnColorWheel", waitForCompletion: false))
+        
         // If randomly generated number is too high, set it by default to red
         if let newState = SwitchState(rawValue: switchState.rawValue + 1) {
             switchState = newState

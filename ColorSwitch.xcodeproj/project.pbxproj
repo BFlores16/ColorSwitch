@@ -14,6 +14,11 @@
 		A5AFF59F258979CF0046BECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5AFF59E258979CF0046BECB /* Assets.xcassets */; };
 		A5AFF5AF25897FAD0046BECB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AFF5AE25897FAD0046BECB /* Settings.swift */; };
 		A5AFF5B6258999DC0046BECB /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AFF5B5258999DC0046BECB /* MenuScene.swift */; };
+		A5AFF5B92589A4C10046BECB /* bling.wav in Resources */ = {isa = PBXBuildFile; fileRef = A5AFF5B82589A4C10046BECB /* bling.wav */; };
+		A5AFF5BC2589A69E0046BECB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5AFF5BB2589A69E0046BECB /* Launch Screen.storyboard */; };
+		A5AFF5C52589A98A0046BECB /* colorSwitchStart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A5AFF5C22589A98A0046BECB /* colorSwitchStart.mp3 */; };
+		A5AFF5C62589A98A0046BECB /* colorSwitchEnd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A5AFF5C32589A98A0046BECB /* colorSwitchEnd.mp3 */; };
+		A5AFF5C72589A98A0046BECB /* turnColorWheel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A5AFF5C42589A98A0046BECB /* turnColorWheel.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		A5AFF5A0258979CF0046BECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5AFF5AE25897FAD0046BECB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A5AFF5B5258999DC0046BECB /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		A5AFF5B82589A4C10046BECB /* bling.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bling.wav; path = "../../../../../Downloads/ColorSwitch 3/ColorSwitch/bling.wav"; sourceTree = "<group>"; };
+		A5AFF5BB2589A69E0046BECB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		A5AFF5C22589A98A0046BECB /* colorSwitchStart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = colorSwitchStart.mp3; path = ../../../../../Downloads/colorSwitchStart.mp3; sourceTree = "<group>"; };
+		A5AFF5C32589A98A0046BECB /* colorSwitchEnd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = colorSwitchEnd.mp3; path = ../../../../../Downloads/colorSwitchEnd.mp3; sourceTree = "<group>"; };
+		A5AFF5C42589A98A0046BECB /* turnColorWheel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = turnColorWheel.mp3; path = ../../../../../Downloads/turnColorWheel.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +69,10 @@
 			isa = PBXGroup;
 			children = (
 				A5AFF5A0258979CF0046BECB /* Info.plist */,
+				A5AFF5B82589A4C10046BECB /* bling.wav */,
+				A5AFF5C32589A98A0046BECB /* colorSwitchEnd.mp3 */,
+				A5AFF5C22589A98A0046BECB /* colorSwitchStart.mp3 */,
+				A5AFF5C42589A98A0046BECB /* turnColorWheel.mp3 */,
 				A5AFF5AC25897C280046BECB /* Assets */,
 				A5AFF5AB25897C1D0046BECB /* Template */,
 				A5AFF5AA25897C100046BECB /* Scenes */,
@@ -97,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				A5AFF59E258979CF0046BECB /* Assets.xcassets */,
+				A5AFF5BB2589A69E0046BECB /* Launch Screen.storyboard */,
 				A5AFF59B258979CC0046BECB /* Main.storyboard */,
 			);
 			path = Assets;
@@ -161,6 +176,11 @@
 			files = (
 				A5AFF59D258979CC0046BECB /* Main.storyboard in Resources */,
 				A5AFF59F258979CF0046BECB /* Assets.xcassets in Resources */,
+				A5AFF5C62589A98A0046BECB /* colorSwitchEnd.mp3 in Resources */,
+				A5AFF5BC2589A69E0046BECB /* Launch Screen.storyboard in Resources */,
+				A5AFF5C52589A98A0046BECB /* colorSwitchStart.mp3 in Resources */,
+				A5AFF5B92589A4C10046BECB /* bling.wav in Resources */,
+				A5AFF5C72589A98A0046BECB /* turnColorWheel.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
