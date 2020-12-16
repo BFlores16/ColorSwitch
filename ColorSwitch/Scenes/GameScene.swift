@@ -123,8 +123,12 @@ class GameScene: SKScene {
         
     }
     
+    /*
+     End the game if the user did not get the color right
+     */
     func gameOver() {
-        print("Game Over")
+        let menuScene = MenuScene(size: view!.bounds.size)
+        view!.presentScene(menuScene)
     }
     
     /*
