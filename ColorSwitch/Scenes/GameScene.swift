@@ -102,7 +102,7 @@ class GameScene: SKScene {
             switchState = .red
         }
         
-        colorCircle.run(SKAction.rotate(byAngle: .pi / 240.0, duration: 0.25))
+        colorCircle.run(SKAction.rotate(byAngle: .pi / 2, duration: 0.25))
         
     }
     
