@@ -34,6 +34,8 @@ class MenuScene: SKScene {
         playLabel.fontName = "AvenirNext-Bold"
         playLabel.fontColor = UIColor.white
         playLabel.fontSize = 50
+        animateFade(label: playLabel)
+        //animateScale(label: playLabel)
         addChild(playLabel)
         
         let highScoreLabel = SKLabelNode(text: "Highscore: " + "\(UserDefaults.standard.integer(forKey: "Highscore"))")
@@ -50,6 +52,29 @@ class MenuScene: SKScene {
         recentScoreLabel.fontSize = 40
         addChild(recentScoreLabel)
     }
+    
+    /*
+     Create fadeIn/fadeOut animation for label
+     */
+    func animateFade(label: SKLabelNode) {
+        let fadeOut = SKAction.fadeOut(withDuration: 0.5)
+        let fadeIn = SKAction.fadeIn(withDuration: 0.5)
+        
+        let sequence = SKAction.sequence([fadeOut,fadeIn])
+        label.run(SKAction.repeatForever(sequence))
+    }
+    
+    /*
+     Create scaling animation
+     */
+    func animateScale(label: SKLabelNode) {
+        let scaleUp = SKAction.scale(to: 1.1, duration: 0.5)
+        let scaleDown = SKAction.scale(to: 1.0, duration: 0.5)
+        
+        let sequence = SKAction.sequence([scaleUp,scaleDown])
+        label.run(SKAction.repeatForever(sequence))
+    }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let gameScene = GameScene(size: view!.bounds.size)

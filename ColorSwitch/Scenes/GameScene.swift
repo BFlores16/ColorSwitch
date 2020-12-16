@@ -78,6 +78,7 @@ class GameScene: SKScene {
     func updateScoreLabel() {
         score += 1
         scoreLabel.text = "\(score)"
+        run(SKAction.playSoundFileNamed("bling", waitForCompletion: false))
     }
     
     /*
