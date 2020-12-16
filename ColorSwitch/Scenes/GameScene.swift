@@ -21,6 +21,7 @@ class GameScene: SKScene {
      */
     func setupPhysics() {
         physicsWorld.gravity = CGVector(dx: 0.0, dy: -2.0)
+        physicsWorld.contactDelegate = self
     }
     
     /*
@@ -60,10 +61,27 @@ class GameScene: SKScene {
         // Add physics body properties for ball
         ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
         ball.physicsBody?.categoryBitMask = PhysicsCategories.ballCategory
+        // Send contact bit to SKPhysicsContactDelegate
         ball.physicsBody?.contactTestBitMask = PhysicsCategories.switchCategory
         ball.physicsBody?.collisionBitMask = PhysicsCategories.none
         
         addChild(ball)
+    }
+    
+}
+
+extension GameScene: SKPhysicsContactDelegate {
+    
+    // 01
+    // 10
+    // 11
+    // Called once ball contacts color circle
+    func didBegin(_ contact: SKPhysicsContact) {
+        let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        if contactMask == PhysicsCategories.ballCategory | PhysicsCategories.switchCategory {
+            print("contact")
+        }
     }
     
 }
