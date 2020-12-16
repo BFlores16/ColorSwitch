@@ -127,6 +127,13 @@ class GameScene: SKScene {
      End the game if the user did not get the color right
      */
     func gameOver() {
+        UserDefaults.standard.setValue(score, forKey: "RecentScore")
+        // Save the user's high score if it is new
+        if score > UserDefaults.standard.integer(forKey: "Highscore") {
+            UserDefaults.standard.setValue(score, forKey: "Highscore")
+        }
+        
+        
         let menuScene = MenuScene(size: view!.bounds.size)
         view!.presentScene(menuScene)
     }
